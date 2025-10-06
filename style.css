@@ -10,4 +10,12 @@
     --cor-destaque:#000943;
     --cor-texto:#ffffff;
  } 
- 
+ body{
+   background-color: var(--cor-principal);
+   color: var(--cor-texto);
+   font-family: var(--fonte-texto);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+ }
