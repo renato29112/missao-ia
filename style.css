@@ -5,4 +5,9 @@
  :root{
     --fonte-titulo:'SUSE+Mono';
     --fonte-texto:'Inconsolata';
+    --cor-principal:#0e008f;
+    --cor-secundaria:#500000;
+    --cor-destaque:#000943;
+    --cor-texto:#ffffff;
  } 
+ 
