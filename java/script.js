@@ -12,3 +12,9 @@ let perguntaAtual;
 let histiriaFinal ="";
 
 botaoIniciar.addEventListener('click,iniciaJogo');
+function iniciaJogo (){
+    atual = 0;
+    histiriaFinal = "";
+    telaInicial.style.display ='none';
+    
+}
