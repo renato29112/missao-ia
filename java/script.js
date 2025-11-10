@@ -11,7 +11,7 @@ let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
-botaoIniciar.addEventListener('clik,iniciaJogo');
+botaoIniciar.addEventListener('click,iniciaJogo');
 function iniciaJogo (){
     atual = 0;
     historiaFinal = "";
@@ -23,8 +23,8 @@ function iniciaJogo (){
 }
 
 function mostraPergunta (){
-    if (atual <= perguntas.length){
-        mostraResultados();
+    if (atual >= perguntas.length){
+        mostraResultado();
         return;
     }
     perguntaAtual = perguntas[atual];
@@ -41,7 +41,7 @@ function mostraAlternativas(){
         caixaAlternativas.appendChild(botaoAlternativas);
     }
     function mostraAfirmacoes(){
-        for(const mostraAfirmacoes of perguntaAtual.mostraAfirmacoes){
+        for(const afirmacoes of perguntaAtual.afirmacoes){
 
         }
     }
@@ -49,22 +49,22 @@ function mostraAlternativas(){
 function respostaSelecionada(opcaoSelecionada){
     const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
     historiaFinal += afirmacoes + "";
-    if (opcaoSelecionada.proxima !== undefined)(
+    if (opcaoSelecionada.proxima !== undefined){
         atual = opcaoSelecionada.proxima;
-    )else{
-        mostraResultados();
+    }else{
+        mostraResultado();
         return;
     }
     mostraPergunta();
 }
-function  mostraResultados(){
+function mostraResultado(){
     caixaPerguntas.textContent = 'Em 2050, ${nome}';
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
-    caixaResultados.classList.add ("mostrar");
-    botaoJogarNovamente.addEventListener("click", JogaNovamente);
+    caixaResultados.classList.add("mostrar");
+    botaoJogarNovamente.addEventListener("click", jogaNovamente);
 }
-function JogaNovamente(){
+function jogaNovamente(){
     atual = 0;
     historiaFinal = "";
     caixaResultados.classList.remove("mostrar");
@@ -72,7 +72,7 @@ function JogaNovamente(){
 }
 function substituiNome(){
     for (const pergunta of perguntas){
-        pergunta.enunciado =  pergunta.enunciado.replace(/você/g, nome);
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
     }
 }
 substituiNome();
